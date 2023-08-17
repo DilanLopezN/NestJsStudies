@@ -2,6 +2,9 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 
 @Controller('courses')
 export class CoursesController {
+
+  constructor(private readonly coursesService: CoursesController) {}
+
   @Get()
   findAll() {
     return 'Todos cursos'
