@@ -7,28 +7,28 @@ export class CoursesController {
 
   @Get()
   findAll() {
-    return 'Todos cursos'
+    return this.coursesService.findAll()
   }
 
   @Get(':id') 
   findOne(
-    @Param() params
+    @Param('id') id: string
   ) {
-    return `Retornando curso ${params.id}` 
+    return this.coursesService.findOne(id)
   }
 
   @Post()
   create(@Body() body) {
-    return body
+    this.coursesService.create(body)
   }
 
   @Put(':id')
   update(@Body() body, @Param() params) {
-    return `Atualização do curso ${params.id}`
+   this.coursesService.update(body, params)
   }
 
   @Delete(':id')
   delete( @Param() param) {
-    return `Deletado curso ${param.id}`
+    this.coursesService.delete(param)
   }
 }
