@@ -20,6 +20,8 @@ export class CoursesService {
     if(!course) {
       throw new HttpException(`Course ${id} not found`, HttpStatus.NOT_FOUND)
     }
+
+    return course
   }
 
   create(createCourseDto: any) {
